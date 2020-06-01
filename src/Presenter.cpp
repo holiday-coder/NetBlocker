@@ -39,6 +39,14 @@ Presenter::Presenter( QGuiApplication& app )
     app.setWindowIcon( app_icon );
 }
 
+Presenter::~Presenter( )
+{
+    if ( m_blocker != nullptr )
+    {
+        m_blocker->unblock( );
+    }
+}
+
 ServersModel*
 Presenter::get_model( )
 {
